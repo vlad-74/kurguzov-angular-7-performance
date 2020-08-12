@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" class="mat-elevation-z3">
+	<nav>
+    <span class="title">Производительность</span>
+    <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" mat-button routerLink="main">onPush</a>
+    <a routerLinkActive="active" mat-button routerLink="second">ngZone</a>
+    <a routerLinkActive="active" mat-button routerLink="worker">Web Worker</a>
+	</nav>
+</mat-toolbar>
+<div class="app-content">
+  <router-outlet></router-outlet>
+</div>
+<br>

@@ -1,0 +1,24 @@
+<h2>NgZone</h2>
+
+<p>Angular позволяет нам запускать кодовые блоки вне Angular зоны. Теперь, в этой внешней Angular зоне, асинхронные события больше не воспринимаются NgZone / Zone, поэтому любое генерируемое асинхронное событие для него не запускается. Это означает, что пользовательский интерфейс не будет обновлен</p>
+
+<p>Progress: {{progress}}%</p>
+<p *ngIf="progress >= 100">Done processing {{label}} of Angular zone!</p>
+
+<div class="flex">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="processWithinAngularZone()"
+  >
+    Процесс в зоне Angular
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="processOutsideOfAngularZone()"
+  >
+  Процесс за пределами зоны Angular
+  </button>
+</div>

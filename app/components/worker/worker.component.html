@@ -1,0 +1,38 @@
+<div style="width:95%; padding: 10px">
+  <p>При высоких нагрузках</p>
+  <p>С воркером процесс идет параллельно и контролы доступны для пользователя</p>
+  <p>Без воркера приложение зависает и контролы НЕ доступны для пользователя</p>
+  <p>Время выполнения (при 45) с воркером в районе 8 сек, без воркера от 8 до 12</p>
+  <p>Т.е. без воркера приложения зависает и становится недоступным на 8 - 12 сек!!!</p>
+  <mat-form-field class="example-full-width">
+    <input matInput type="number" max="45"[(ngModel)]="itog" placeholder="Max number 45" value="45">
+  </mat-form-field>
+  <br>
+
+  <div class="container">
+
+    <div>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="calcFibWithWorker()"
+      >
+        fibonacci with worker
+      </button>
+      <p>{{itogWithWorker }}  -  {{timeWithWorker}}</p>
+    </div>
+    
+    <div>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="calcFibWithoutWorker()"
+      >
+        fibonacci without worker
+      </button>
+      <p>{{itogWithoutWorker}}  -  {{timeWithoutWorker}}</p>
+    </div>
+
+  </div>
+<p>FIBONACCI - Последовательность чисел, каждый член которой равен сумме двух предыдущих</p>
+</div>

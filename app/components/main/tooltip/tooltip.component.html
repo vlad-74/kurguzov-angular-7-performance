@@ -1,0 +1,19 @@
+<div>
+  <div *ngFor="let item of _items">this.cdr.detectChanges - {{item.title}}</div>
+  <!-- <div *ngFor="let item of items | async">async - {{item.title}}</div> -->
+  <hr>
+  <ng-content></ng-content>
+  <h1>position = {{config.position}}</h1>
+  {{runChangeDetection}}
+  <hr>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="add()"
+  >
+    Событие внутри дочернего компонента
+  </button>
+  {{count}}
+  <hr>
+</div>

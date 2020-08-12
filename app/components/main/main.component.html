@@ -1,0 +1,57 @@
+<div class="div-info">
+  <p> По умолчанию Angular использует ChangeDetectionStrategy.Default стратегию обнаружения изменений. </p>
+  <p>
+    ChangeDetectionStrategy.Default работает таким образом, что каждый раз, когда что-то меняется в нашем приложении, в результате различных пользовательских событий, таймеров, XHR, промисов и т.д., обнаружение изменений будет запускаться по всем компонентам.
+  </p>
+
+  <p>Если мы позволим Angular, каждый раз, когда запускается цикл обнаружения изменений, проверять каждое из этих условий, это негативно скажется на производительности.</p>
+
+  <h3>OnPush стратегия обнаружения изменений</h3>
+  <h4>1. Изменилась ссылка input параметра</h4>
+  <h4>2. Событие внутри компонента или его потомках</h4>
+  <h4>3. Ручной запуск обнаружения изменений</h4>
+
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="addAsync()"
+  >
+    Push - AddAsync 
+  </button>
+
+  <br><br>
+  <app-tooltip [config]="config" [items]="items$">
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onClick()"
+    >
+      position = 'bottom' НЕ СРАБОТАЕТ - передача свойства объекта
+    </button>
+    <br><br>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="onClickPush()"
+    >
+      position = 'left' СРАБОТАЕТ !!! - передача нового объекта
+    </button>
+  </app-tooltip>
+  <div class="flex">
+    <a 
+      mat-list-item href="https://dev-gang.ru/article/10-hitrostei-dlja-optimizacii-vashego-angular-prilozhenija-8fk5qyino3/"
+      target="_blank">
+      <button mat-raised-button color="warn">10 оптимизаций</button>
+    </a>
+    <a 
+      mat-list-item href="https://webdraftt.com/tutorial/angular-change-detection"
+      target="_blank">
+      <button mat-raised-button color="warn">webdraftt</button>
+    </a>
+    <a 
+      mat-list-item href="http://www.coldfox.ru/article/5c34d3d1e1969f269b611179/Change-detection-%D0%B2-Angular"
+      target="_blank">
+      <button mat-raised-button color="warn">coldfox</button>
+    </a>
+  </div>
+</div>
